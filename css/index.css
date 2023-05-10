@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.form-range
+{
+    margin-right: 10px;
+}
+.form-control
+{
+    margin-bottom: 10px;
+}
+.container
+{
+    border-radius: 10px;
+}
+h1
+{
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+p
+{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.btn
+{
+    --bs-btn-padding-x: 5px;
+    --bs-btn-padding-y: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+.btn-primary
+{
+    margin-right: 5px;
+}
+.btn-secundary
+{
+    margin-left: 5px;
+}
+.imagem
+{
+    text-align: center;
+}
+.form-label
+{
+    font-family: 'Open Sans', sans-serif;
+}
+.container
+{
+    margin-top: 23vh;
+}
+body
+{
+    background-color: rgba(0, 0, 0, 0.1);
+}
