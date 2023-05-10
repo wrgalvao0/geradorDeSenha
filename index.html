@@ -11,7 +11,15 @@
     <h2>Utilize este gerador de senha online para criar uma senha forte e segura para sua segurança</h2>
     <input type="text" id="texto-senha" name="texto-senha">
     <label for="tamanho-senha">Personalizar</label>
-    <input type="range" name="tamanho-senha" min="06" max="16">
-    <button>Copiar senha</button>
+    <input type="range" id="tamanho-senha" name="tamanho-senha" min="06" max="16">
+    <label for="maiuscula">Maiuscula</label>
+    <input type="checkbox" value="Maiuscula" id="maiuscula">
+    <label for="minuscula">Minuscula</label>
+    <input type="checkbox" value="Minuscula" id="minuscula">
+    <label for="numerico">Numerico</label>
+    <input type="checkbox" value="Numerico" id="numerico">
+    <button id="botao-gerar-senha">Gerar senha</button>
+    <button id="botao-copiar-senha">Copiar senha</button>
+    <script src="js/geracaoSenha.js"></script>
 </body>
 </html>
