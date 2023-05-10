@@ -3,10 +3,6 @@
 {
     margin-right: 10px;
 }
-.form-control
-{
-    margin-bottom: 10px;
-}
 .container
 {
     border-radius: 10px;
@@ -51,4 +47,36 @@ p
 body
 {
     background-color: rgba(0, 0, 0, 0.1);
+}
+.indicador-seguranca
+{
+    height: 10px;
+    background-color: #ddd;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 10px;
+}
+.indicador-seguranca .barra
+{
+    height: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: all 0.2s;
+}
+.indicador-seguranca .barra.completo
+{
+    border-top-right-radius: 0;
+}
+.indicador-seguranca .barra.critico
+{
+    background-color: red;
+}
+.indicador-seguranca .barra.aviso
+{
+    background-color: yellow;
+}
+.indicador-seguranca .barra.sucesso
+{
+    background-color: green;
 }
