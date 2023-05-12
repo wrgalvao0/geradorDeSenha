@@ -18,17 +18,14 @@ function geraSenha()
     if(selecaoMaiuscula.checked)
     {
         caracteres += maisuculas
-        console.log(caracteres)
     }
     if(selecaoNumerico.checked)
     {
         caracteres += numeros
-        console.log(caracteres)
     }
     if(selecaoSimbolo.checked)
     {
         caracteres += simbolos
-        console.log(caracteres)
     }
     
     for(let i = 0; i < tamanhoSenha; i++)
@@ -36,7 +33,6 @@ function geraSenha()
         let indiceAleatorio = Math.floor(Math.random() * caracteres.length)
         senha = senha + caracteres.substring(indiceAleatorio, indiceAleatorio + 1)
     }
-    console.log(senha)
     campoTextoSenha.value = senha
     calculaQualidadeSenha()
 }
@@ -73,7 +69,7 @@ function calculaQualidadeSenha()
         indicadorSegurancaBarra.classList.add("sucesso")
         //safe demais
     }
-    console.log(porcentagem)
+    //console.log(porcentagem)
     indicadorSegurancaBarra.style.width = `${porcentagem}%`
 }
 
