@@ -94,10 +94,20 @@ function getTamanhoSenha()
     document.querySelector("#senha-tamanho-texto").innerText = tamanhoSenha
 }
 
-function copiarSenha()
-{
-    navigator.clipboard.writeText(campoTextoSenha.value)
+
+function copiarSenha() {
+    navigator.clipboard.writeText(campoTextoSenha.value).then(() => {
+        const mensagem = document.querySelector("#mensagem-copiada")
+        mensagem.style.display = "flex"
+
+        // Esconde a mensagem depois de 5 segundos
+        setTimeout(() => {
+            mensagem.style.display = "none"
+            mensagem.style.justifyContent = "center"
+        }, 5000)
+    })
 }
+
 
 tamanhoSenhaElemento = document.querySelector("#tamanho-senha")
 tamanhoSenhaElemento.addEventListener("input", getTamanhoSenha)

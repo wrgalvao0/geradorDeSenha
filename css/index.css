@@ -80,3 +80,9 @@ body
 {
     background-color: green;
 }
+#mensagem-copiada{
+    display: none;
+    justify-content: center;
+    color: green;
+    margin-top: 10px;
+}
