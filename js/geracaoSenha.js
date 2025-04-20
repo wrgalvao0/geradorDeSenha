@@ -7,35 +7,50 @@ const indicadorSegurancaBarra = document.querySelector("#indicador-seguranca-bar
 let selecaoMaiuscula = document.querySelector("#btncheck1")
 let selecaoSimbolo = document.querySelector("#btncheck2")
 let selecaoNumerico = document.querySelector("#btncheck3")
-function geraSenha()
-{
+
+function geraSenha() {
     let caracteres = "abcdefghjkmnpqrstuvwxyz"
-    const maisuculas = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+    const maiusculas = "ABCDEFGHJKLMNPQRSTUVWXYZ"
     const simbolos = "?!@&*()[]"
     const numeros = "123456789"
-    let senha = ""
+    let senha = []
+    let obrigatorios = []
 
-    if(selecaoMaiuscula.checked)
-    {
-        caracteres += maisuculas
+    if (selecaoMaiuscula.checked) {
+        caracteres += maiusculas
+        obrigatorios.push(maiusculas[Math.floor(Math.random() * maiusculas.length)])
     }
-    if(selecaoNumerico.checked)
-    {
+
+    if (selecaoNumerico.checked) {
         caracteres += numeros
+        obrigatorios.push(numeros[Math.floor(Math.random() * numeros.length)])
     }
-    if(selecaoSimbolo.checked)
-    {
+
+    if (selecaoSimbolo.checked) {
         caracteres += simbolos
+        obrigatorios.push(simbolos[Math.floor(Math.random() * simbolos.length)])
     }
-    
-    for(let i = 0; i < tamanhoSenha; i++)
-    {
-        let indiceAleatorio = Math.floor(Math.random() * caracteres.length)
-        senha = senha + caracteres.substring(indiceAleatorio, indiceAleatorio + 1)
+
+    // Garante que a senha tenha pelo menos os obrigatórios
+    for (let i = 0; i < tamanhoSenha - obrigatorios.length; i++) {
+        senha.push(caracteres[Math.floor(Math.random() * caracteres.length)])
     }
-    campoTextoSenha.value = senha
+
+    // Adiciona os obrigatórios à senha
+    senha = senha.concat(obrigatorios)
+
+    // Embaralha a senha (Fisher-Yates shuffle)
+    for (let i = senha.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        const temp = senha[i]
+        senha[i] = senha[j]
+        senha[j] = temp
+    }
+
+    campoTextoSenha.value = senha.join("")
     calculaQualidadeSenha()
 }
+
 
 function calculaQualidadeSenha()
 {
